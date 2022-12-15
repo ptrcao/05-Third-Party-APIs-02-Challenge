@@ -6,7 +6,7 @@
 ## Project Description
 
 A day scheduler powered by jQuery and Javascript.  Features include:
-* a live clock, which uses `setInterval`
+* a live day.js clock, which uses `setInterval`
 * allows the user to edit the daily schedule, and retains changes in localStorage until overriden
 * a Bootstrap loading spinner, which is based on fixed CSS positioning and confirms the save action
 * colour-coding of the time slots based on past hours, current and future
