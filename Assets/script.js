@@ -5,10 +5,7 @@
 // in the html.
 $(function () {
  
-
-
- 
-  Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var currentTime = dayjs().format("HH");
   // console.log(currentTime);
