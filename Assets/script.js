@@ -14,7 +14,7 @@ $(function () {
 
   // Colour-coding the time blocks based on past, present and future
 
-  timeSlots = document.getElementsByClassName("time-block");
+  var timeSlots = document.getElementsByClassName("time-block");
 
   for (var i = 0; i < timeSlots.length; i++) {
     // console.log(currentTime);
