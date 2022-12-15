@@ -1,11 +1,18 @@
-
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
  
   // Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+  // https://github.com/iamkun/dayjs/issues/1284
+  dayjs.extend(dayjs_plugin_utc)
+  dayjs.extend(dayjs_plugin_timezone)
+
+  var guessedTimezone = dayjs.tz.guess()
+
+  var defaultTimezone = 'Australia/Sydney'
+  dayjs.tz.setDefault(defaultTimezone)
 
   var currentTime = dayjs().format("HH");
   // console.log(currentTime);
@@ -33,11 +40,11 @@ $(function () {
     }
   }
  
-  Intl.DateTimeFormat().resolvedOptions().timeZone;
+  // Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   setInterval( function(){
     // dateTimeContainer.textContent = dayjs.tz.guess();
-    dateTimeContainer.textContent = dayjs()
+    dateTimeContainer.textContent = dayjs().tz(guessedTimezone).local().format("dddd, D MMMM YYYY HH:mm:ss (ZZ)")
   }, 1000);
 
   // document.getElementById("time-block-container")
