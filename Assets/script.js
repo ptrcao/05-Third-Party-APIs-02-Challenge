@@ -1,12 +1,13 @@
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+ 
 
-  dayjs.extend(utc)
-  dayjs.extend(timezone)
-  dayjs.tz.guess()
 
+ 
   Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   var currentTime = dayjs().format("HH");
@@ -35,8 +36,11 @@ $(function () {
     }
   }
  
+  Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   setInterval( function(){
-    dateTimeContainer.textContent = dayjs();
+    // dateTimeContainer.textContent = dayjs.tz.guess();
+    dateTimeContainer.textContent = dayjs()
   }, 1000);
 
   // document.getElementById("time-block-container")
