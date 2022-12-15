@@ -3,6 +3,14 @@
 // in the html.
 $(function () {
  
+  // Add leading zeroes
+  function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+  }
+
+
   // Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   // https://github.com/iamkun/dayjs/issues/1284
@@ -14,9 +22,18 @@ $(function () {
   var defaultTimezone = 'Australia/Sydney'
   dayjs.tz.setDefault(defaultTimezone)
 
+  if(dayjs().format("HH")){
   var currentTime = dayjs().format("HH");
   // console.log(currentTime);
   // var currentTime = 11
+  }
+  else{
+    // Fallback to native Javascript Date() function
+    d = new Date()
+    var currentTime = pad(d.getHours(),2)
+  }
+
+
 
   var dateTimeContainer = document.getElementById("currentDay");
 
@@ -43,15 +60,15 @@ $(function () {
   // Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   setInterval( function(){
-    // dateTimeContainer.textContent = dayjs.tz.guess();
+    if(dayjs().tz(guessedTimezone).local().format(`dddd, D MMMM YYYY HH:mm:ss (ZZ)`)){
     dateTimeContainer.textContent = dayjs().tz(guessedTimezone).local().format(`dddd, D MMMM YYYY HH:mm:ss (ZZ)`)
     dateTimeContainer.textContent += ' '.concat(guessedTimezone)
+    }
+    else{
+      // Fallback to native Javascript Date() function
+      dateTimeContainer.textContent = new Date();
+    }
   }, 1000);
-
-  // document.getElementById("time-block-container")
-  // you would have to use if() and limit to child elements of interest???
-  // https://www.youtube.com/watch?v=pKzf80F3O0U&ab_channel=dcode
-  // target.matches("")
 
 
   saveDivs.on("click", ".saveBtn", function (event) {
