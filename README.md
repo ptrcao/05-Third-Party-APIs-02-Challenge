@@ -7,10 +7,12 @@
 ## Project Description
 
 A day scheduler powered by jQuery and Javascript.  Features include:
-* a live day.js clock, which uses `setInterval`
-* allows the user to edit the daily schedule, and retains changes in localStorage until overriden
-* a Bootstrap loading spinner, which is based on fixed CSS positioning and confirms the save action
-* colour-coding of the time slots based on past hours, current and future
+* A live day.js clock, which uses `setInterval`
+* The app attempts to guess the user's local time, using `dayjs.tz.guess()`
+* Allows the user to edit the daily schedule, and retains changes in localStorage until overriden
+* A Bootstrap loading spinner, which is based on fixed CSS positioning and confirms the save action
+* Colour-coding of the time slots based on past hours, current and future
+* Includes a fallback contingency, in case day.js doesn't work, the app will fall back on JS-native Date() and getHours() functions
 
 
 ## Screenshot (animated GIF)
@@ -60,7 +62,8 @@ Implemented.
 Implemented, using `day.js` and associated libraries:
 
 ```
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/en-au.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/timezone.js"></script>
+
 ```
