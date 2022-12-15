@@ -57,4 +57,10 @@ Implemented.
 
 > Uses a date utility library to work with date and time
 
-Implemented, using `day.js` library.
+Implemented, using `day.js` and associated libraries:
+
+```
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/en-au.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/utc.js"></script>
+```

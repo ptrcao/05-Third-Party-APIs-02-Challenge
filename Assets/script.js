@@ -2,6 +2,11 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+
+  dayjs.extend(utc)
+  dayjs.extend(timezone)
+  dayjs.tz.guess()
+
   var currentTime = dayjs().format("HH");
   // console.log(currentTime);
   // var currentTime = 11
