@@ -44,7 +44,8 @@ $(function () {
 
   setInterval( function(){
     // dateTimeContainer.textContent = dayjs.tz.guess();
-    dateTimeContainer.textContent = dayjs().tz(guessedTimezone).local().format("dddd, D MMMM YYYY HH:mm:ss (ZZ)")
+    dateTimeContainer.textContent = dayjs().tz(guessedTimezone).local().format(`dddd, D MMMM YYYY HH:mm:ss (ZZ)`)
+    dateTimeContainer.textContent += ' '.concat(guessedTimezone)
   }, 1000);
 
   // document.getElementById("time-block-container")
