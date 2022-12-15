@@ -1,6 +1,7 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
 > Repository URL: https://github.com/ptrcao/05-Third-Party-APIs-02-Challenge.git
+
 > Web app URL: https://ptrcao.github.io/05-Third-Party-APIs-02-Challenge/
 
 ## Project Description
