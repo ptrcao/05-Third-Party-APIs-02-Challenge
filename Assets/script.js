@@ -7,6 +7,8 @@ $(function () {
   dayjs.extend(timezone)
   dayjs.tz.guess()
 
+  Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   var currentTime = dayjs().format("HH");
   // console.log(currentTime);
   // var currentTime = 11
